@@ -1,9 +1,12 @@
-<h3>Temperature Converter</h3>
 
 <div>
+<h3>Temperature Converter</h3>
+</div>
+<br>
+<div id="container" class="form-section centering-elements">
     
-    Celcius: <input type="text" [(ngModel)]="celcius" (ngModelChange)="convertCtoF()"> <br>
-    Fahrenheit: <input type="text" [(ngModel)]="fahrenheit" (ngModelChange)="convertFtoC()"> <br>
+    Celcius: <input type="text" [(ngModel)]="celcius" (ngModelChange)="convertCtoF()" class="form-control input-text centering-elements"> <br>
+    Fahrenheit: <input type="text" [(ngModel)]="fahrenheit" (ngModelChange)="convertFtoC()" class="form-control input-text centering-elements"> <br>
     <!-- <button (click)="convertCtoF()">Convert Celcius to Fahrenheit</button> -->
 </div>
 

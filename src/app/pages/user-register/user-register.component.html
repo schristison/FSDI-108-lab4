@@ -6,7 +6,7 @@
 
 
 
-    <div class="row">
+    <div class="container">
         <div class="form col col-8">
     
             <div class="form-group row">
@@ -27,13 +27,20 @@
                 <label class="col-4 form-group-label"> Password:</label>
                 <div class="col-8">
                     <input class="form-control" type="password" [(ngModel)]="model.password">
+
+                    <div *ngIf="retypePassword && !isPasswordStrong()" class="alert alert-danger">
+                        Your password is too weak. Must have ...
+                    </div>
                 </div>
             </div>  
             
             <div class="form-group row">
                 <label class="col-4 form-group-label"> Retype Password:</label>
                 <div class="col-8">
-                    <input class="form-control" type="password" [(ngModel)]="retypePassword">
+                     <input class="form-control" type="password" [(ngModel)]="retypePassword">
+                     <div *ngIf="model.password && retypePassword && model.password != retypePassword" class="alert alert-danger">
+                        Passwords do not match
+                    </div>
                 </div>
             </div> 
             
@@ -53,7 +60,12 @@
             
             <div class="form-group row">                
                 <div class="col-8 offset-4">
-                    <button (click)="save()" class="btn btn-info">Register User</button>
+                    <button (click)="save()" [disabled]="isDataCorrect()"
+                     class="btn btn-info">Register User</button>
+
+                    <span *ngIf="savedAlertVisible" class="alert alert-success">
+                        The user has been registered!
+                    </span>
                     
                 </div>
             </div>  
