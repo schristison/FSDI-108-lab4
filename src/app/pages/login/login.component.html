@@ -1,18 +1,25 @@
-<p>login works!</p>
 
-<form>
+<h1 class="site-header">Login</h1>
+
+<div class="container">
+
+
+  <form>
     <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+      <label for="inputUserName3" class="col-sm-2 col-form-label">Username</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" [(ngModel)]="userName" name="userName">
+        <input type="email" class="form-control" id="inputUserName3" [(ngModel)]="userName" name="userName">
       </div>
     </div>
     <div class="form-group row">
       <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
       <div class="col-sm-10">
         <input type="password" class="form-control" id="inputPassword3" [(ngModel)]="password" name="password">
+        <div *ngIf="loginError" class="alert alert-danger">
+          Login failed... try again.
+        </div>
       </div>
-    </div>    
+    </div>
     <div class="form-group row">
       <div class="col-sm-2">Checkbox</div>
       <div class="col-sm-10">
@@ -27,10 +34,15 @@
     <div class="form-group row">
       <div class="col-sm-10">
         <button (click)="validateLogin()" type="submit" class="btn btn-primary">Sign in</button>
+        <span *ngIf="loginSucceed" class="alert alert-success">
+          You are now logged in!
+        </span>
       </div>
+
     </div>
 
     <!-- display an error alert when login failed -->
 
     <!-- display a success alert when login succeeds -->
   </form>
+</div>

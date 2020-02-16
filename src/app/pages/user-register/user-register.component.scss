@@ -1,10 +1,14 @@
 .container{
     border: 0.05rem solid rgb(236, 79, 5);
     border-radius: 0.5rem;
-    box-shadow: -0.2rem 0.8rem 0.8rem rgb(236, 79, 5);
-    margin-top: 5rem;    
+    box-shadow: -0.2rem 0.5rem 0.9rem rgb(236, 79, 5);
+    margin-top: 2rem;    
     width: 70%;
 }
 .row{
     margin: 2rem;
+}
+.site-header{
+    text-align: center;
+    margin-top: 3rem;
 }

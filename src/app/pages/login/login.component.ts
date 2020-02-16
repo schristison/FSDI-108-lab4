@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   password = "";
   registeredUsers = []; // this is an array
 
+  loginError = false;
+  loginSucceed = false;
+
   constructor(private data: DataService) { // this is a constructor
     this.registeredUsers = data.getUsers();
   }
@@ -26,11 +29,13 @@ export class LoginComponent implements OnInit {
       var user = this.registeredUsers[i];
       if(user.userName == this.userName && user.password == this.password) {
         console.log("Credentials are correct, you are logged in!!");
-        return true;
+        this.loginSucceed = true;
+        return true;              
       }
 
     }
     console.log("Error, bad credentials!!");
+    this.loginError = true;
   }
 
 }

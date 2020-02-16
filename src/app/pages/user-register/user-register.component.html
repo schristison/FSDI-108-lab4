@@ -1,10 +1,7 @@
 
-<!-- 
 
 
- -->
-
-
+ <h1 class="site-header">Registering a New User</h1>
 
     <div class="container">
         <div class="form col col-8">
@@ -61,12 +58,14 @@
             <div class="form-group row">                
                 <div class="col-8 offset-4">
                     <button (click)="save()" [disabled]="isDataCorrect()"
-                     class="btn btn-info">Register User</button>
-
+                     class="btn btn-info">Register User</button>                  
+                
+               </div>
+                <br><br>
+                <div class="col-8 offset-4">
                     <span *ngIf="savedAlertVisible" class="alert alert-success">
-                        The user has been registered!
+                        The user is now registered!
                     </span>
-                    
                 </div>
             </div>  
 
